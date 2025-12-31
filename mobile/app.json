@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "African Paradise",
+    "slug": "african-paradise",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "scheme": "african-paradise",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#0C0A09"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.africanparadise.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0C0A09"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.africanparadise.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-splash-screen"
+    ],
+    "developmentClient": {
+      "silentLaunch": true
+    },
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "da3eb883-c38a-40a2-bb01-48e764480679"
+      }
+    }
+  }
+}
