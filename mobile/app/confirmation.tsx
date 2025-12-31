@@ -49,8 +49,8 @@ export default function ConfirmationScreen() {
         {currentOrder.orderType === 'pickup' && (
           <View style={styles.pickupAddress}>
             <Text style={styles.addressText}>African Paradise</Text>
-            <Text style={styles.addressText}>123 Paradise Street</Text>
-            <Text style={styles.addressText}>New York, NY 10001</Text>
+            <Text style={styles.addressText}>2263 Morse Rd</Text>
+            <Text style={styles.addressText}>Columbus, OH 43229</Text>
           </View>
         )}
       </View>

@@ -14,9 +14,9 @@ export default function HomeScreen() {
       <View style={styles.hero}>
         <Text style={styles.subtitle}>Welcome to</Text>
         <Text style={styles.title}>African Paradise</Text>
-        <Text style={styles.tagline}>Authentic African Cuisine</Text>
+        <Text style={styles.tagline}>Authentic Somali Cuisine</Text>
         <Text style={styles.description}>
-          Experience the rich flavors and traditions of African cooking, crafted with love and the finest ingredients.
+          Experience authentic Somali cuisine—rich in tradition, layered with spice, and made from recipes passed down through generations. Every bite is a celebration of culture, warmth, and home.
         </Text>
         <TouchableOpacity
           style={styles.heroButton}
@@ -60,12 +60,12 @@ export default function HomeScreen() {
         <Text style={styles.sectionTitle}>Hours</Text>
         <View style={styles.hoursCard}>
           <View style={styles.hoursRow}>
-            <Text style={styles.hoursDay}>Monday - Friday</Text>
-            <Text style={styles.hoursTime}>8:00 AM - 10:00 PM</Text>
+            <Text style={styles.hoursDay}>Mon - Sat</Text>
+            <Text style={styles.hoursTime}>11:00 AM - 10:00 PM</Text>
           </View>
-          <View style={styles.hoursRow}>
-            <Text style={styles.hoursDay}>Saturday - Sunday</Text>
-            <Text style={styles.hoursTime}>9:00 AM - 11:00 PM</Text>
+          <View style={[styles.hoursRow, styles.hoursRowLast]}>
+            <Text style={styles.hoursDay}>Sunday</Text>
+            <Text style={styles.hoursTime}>11:00 AM - 9:00 PM</Text>
           </View>
         </View>
       </View>
@@ -74,9 +74,9 @@ export default function HomeScreen() {
       <View style={[styles.section, styles.lastSection]}>
         <Text style={styles.sectionTitle}>Contact</Text>
         <View style={styles.contactCard}>
-          <Text style={styles.contactText}>📍 123 Paradise Street</Text>
-          <Text style={styles.contactText}>📞 (555) 123-4567</Text>
-          <Text style={styles.contactText}>✉️ info@africanparadise.com</Text>
+          <Text style={styles.contactText}>2263 Morse Rd</Text>
+          <Text style={styles.contactText}>Columbus, OH 43229</Text>
+          <Text style={styles.contactTextPhone}>+1 614-476-2163</Text>
         </View>
       </View>
     </ScrollView>
@@ -203,6 +203,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
   },
+  hoursRowLast: {
+    borderBottomWidth: 0,
+  },
   hoursDay: {
     fontFamily: 'DMSans_500Medium',
     fontSize: fontSize.base,
@@ -224,5 +227,12 @@ const styles = StyleSheet.create({
     fontFamily: 'DMSans_400Regular',
     fontSize: fontSize.base,
     color: colors.foregroundMuted,
+    lineHeight: 24,
+  },
+  contactTextPhone: {
+    fontFamily: 'DMSans_500Medium',
+    fontSize: fontSize.base,
+    color: colors.primary,
+    marginTop: spacing.sm,
   },
 });

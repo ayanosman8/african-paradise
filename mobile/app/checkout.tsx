@@ -293,8 +293,8 @@ export default function CheckoutScreen() {
         <View style={styles.pickupInfo}>
           <Text style={styles.pickupTitle}>Pickup Location</Text>
           <Text style={styles.pickupAddress}>African Paradise</Text>
-          <Text style={styles.pickupAddress}>123 Paradise Street</Text>
-          <Text style={styles.pickupAddress}>New York, NY 10001</Text>
+          <Text style={styles.pickupAddress}>2263 Morse Rd</Text>
+          <Text style={styles.pickupAddress}>Columbus, OH 43229</Text>
         </View>
       )}
     </View>

@@ -6,11 +6,13 @@ import {
   ScrollView,
   TouchableOpacity,
   Animated,
+  Image,
 } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colors, spacing, fontSize } from '../../src/constants/theme';
 import { menuItems } from '../../src/data/menu';
+import { getLocalImage } from '../../src/data/images';
 import { useCart } from '../../src/context/CartContext';
 
 export default function MenuItemDetail() {
@@ -71,6 +73,10 @@ export default function MenuItemDetail() {
   // Get category display name
   const categoryName = item.category.charAt(0).toUpperCase() + item.category.slice(1);
 
+  // Check for local image
+  const localImage = getLocalImage(item.name);
+  const imageSource = localImage || { uri: item.image };
+
   return (
     <View style={styles.container}>
       <ScrollView
@@ -78,15 +84,13 @@ export default function MenuItemDetail() {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        {/* Image Placeholder */}
+        {/* Image */}
         <View style={styles.imageContainer}>
-          <View style={styles.imagePlaceholder}>
-            <View style={styles.logoBox}>
-              <Text style={styles.logoText}>AP</Text>
-            </View>
-            <View style={styles.placeholderDivider} />
-            <Text style={styles.placeholderCategory}>{categoryName}</Text>
-          </View>
+          <Image
+            source={imageSource}
+            style={styles.image}
+            resizeMode="cover"
+          />
         </View>
 
         {/* Item Info */}
@@ -178,39 +182,9 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
   },
-  imagePlaceholder: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: colors.backgroundSecondary,
-  },
-  logoBox: {
-    width: 100,
-    height: 100,
-    borderWidth: 2,
-    borderColor: colors.primary,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: spacing.lg,
-  },
-  logoText: {
-    fontFamily: 'CormorantGaramond_600SemiBold',
-    fontSize: 40,
-    color: colors.primary,
-    letterSpacing: 4,
-  },
-  placeholderDivider: {
-    width: 60,
-    height: 1,
-    backgroundColor: colors.primary,
-    marginBottom: spacing.md,
-  },
-  placeholderCategory: {
-    fontFamily: 'DMSans_500Medium',
-    fontSize: fontSize.sm,
-    color: colors.primary,
-    textTransform: 'uppercase',
-    letterSpacing: 3,
+  image: {
+    width: '100%',
+    height: '100%',
   },
   infoSection: {
     padding: spacing.lg,
